@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag's Enchanting World - Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+            color: #4A0E4E;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+        nav a {
+            color: #4A0E4E;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF1493;
+            transform: scale(1.1);
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            color: #FF1493;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        #details {
+            font-size: 1.4em;
+            font-weight: 400;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+            min-height: 3em;
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            text-align: right;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        .social-icon {
+            color: #4A0E4E;
+            font-size: 28px;
+            margin-left: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #FF1493;
+        }
+        .unclickable {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+        #day, #time {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #4A0E4E;
+        }
+        #love-meter {
+            width: 200px;
+            height: 20px;
+            background-color: #FFC0CB;
+            border-radius: 10px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        #love-meter-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #FF1493;
+            transition: width 0.5s ease-in-out;
+        }
+        #compliment {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #FF1493;
+            margin-top: 20px;
+            min-height: 1.5em;
+        }
+        .floating-hearts {
+            position: fixed;
+            top: -10%;
+            font-size: 24px;
+            color: #FF69B4;
+            user-select: none;
+            pointer-events: none;
+        }
+        #love-button {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+            background-color: #FF1493;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            outline: none;
+        }
+        #love-button:hover {
+            background-color: #FF69B4;
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        #love-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="day"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-pics.html">My Pics</a>
+            <a href="you-and-me.html">You & Me</a>
+            <a href="special.html">Special <i class="fas fa-heart"></i></a>
+        </nav>
+        <div id="time"></div>
+    </header>
+    <main>
+        <h1>Anurag</h1>
+        <div id="details"></div>
+        <div id="love-meter"><div id="love-meter-fill"></div></div>
+        <button id="love-button">Show Your Love! 💖</button>
+        <div id="compliment"></div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+        <span class="social-icon unclickable"><i class="fab fa-whatsapp"></i></span>
+    </footer>
+    <script>
+        // Update day and time
+        function updateDateTime() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('day').textContent = days[now.getDay()];
+            document.getElementById('time').textContent = now.toLocaleTimeString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // Typewriter effect
+        const details = "With a heart as warm as a summer's day and a smile that lights up the room, Anurag is a true gem. His passion, creativity, and kindness make every moment magical.";
+        let i = 0;
+        function typeWriter() {
+            if (i < details.length) {
+                document.getElementById("details").innerHTML += details.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        typeWriter();
+
+        // Love meter and floating hearts
+        const loveButton = document.getElementById('love-button');
+        const loveMeterFill = document.getElementById('love-meter-fill');
+        const complimentEl = document.getElementById('compliment');
+        let loveLevel = 0;
+
+        const compliments = [
+            "You're amazing!",
+            "Your smile brightens my day!",
+            "You make the world a better place!",
+            "You're one in a million!",
+            "You're absolutely wonderful!"
+        ];
+
+        loveButton.addEventListener('click', () => {
+            loveLevel = Math.min(loveLevel + 10, 100);
+            loveMeterFill.style.width = `${loveLevel}%`;
+            complimentEl.textContent = compliments[Math.floor(Math.random() * compliments.length)];
+            createFloatingHeart();
+        });
+
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.classList.add('floating-hearts');
+            heart.style.left = `${Math.random() * 100}%`;
+            document.body.appendChild(heart);
+
+            let position = -10;
+            const interval = setInterval(() => {
+                position += 0.5;
+                heart.style.top = `${position}%`;
+                if (position >= 110) {
+                    clearInterval(interval);
+                    document.body.removeChild(heart);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>

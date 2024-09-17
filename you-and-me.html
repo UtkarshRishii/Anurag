@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You & Me - Anurag's Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+            color: #4A0E4E;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #4A0E4E;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF1493;
+            transform: scale(1.1);
+        }
+        main {
+            flex-grow: 1;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #FF1493;
+            margin-bottom: 20px;
+        }
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .timeline-item {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .timeline-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #FF1493;
+            margin-bottom: 10px;
+        }
+        .timeline-content {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        footer a {
+            color: #4A0E4E;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        footer a.unclickable {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="day"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-pics.html">My Pics</a>
+            <a href="you-and-me.html">You & Me</a>
+            <a href="special.html">Special <i class="fas fa-heart"></i></a>
+        </nav>
+        <div id="time"></div>
+    </header>
+    <main>
+        <h1>You & Me</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">First Meeting</div>
+                <div class="timeline-content">
+                    The day our eyes met, and the world stood still. Who knew a simple "hello" could change everything?
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">First Date</div>
+                <div class="timeline-content">
+                    Nervous laughter, stolen glances, and a magical evening that felt like it was straight out of a fairytale.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Our Adventures</div>
+                <div class="timeline-content">
+                    From spontaneous road trips to quiet evenings under the stars, every moment with you is an adventure I cherish.
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Today and Beyond</div>
+                <div class="timeline-content">
+                    With you by my side, I'm excited for all the beautiful moments yet to come. Together, we will write the most amazing chapters of our lives. ❤️
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <span class="social-icon unclickable"><i class="fab fa-whatsapp"></i></span>
+    </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('day').textContent = days[now.getDay()];
+            document.getElementById('time').textContent = now.toLocaleTimeString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

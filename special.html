@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Page - I LOVE YOU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FFB6C1, #FF69B4); /* Same theme as index.html */
+            color: #FF69B4;
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #day, #time {
+            font-size: 1.2em;
+            color: #4A0E4E; /* Same color as index.html */
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            color: #FFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF1493;
+            transform: scale(1.1);
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .message {
+            font-size: 4em;
+            font-weight: bold;
+            color: #FFF;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            animation: fadeInOut 4s ease-in-out infinite, pulse 1s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="day"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mypics.html">My Pics</a>
+            <a href="youandme.html">You & Me</a>
+            <a href="special.html">Special</a>
+        </nav>
+        <div id="time"></div>
+    </header>
+    <main>
+        <div class="message">I LOVE YOU</div>
+    </main>
+    <audio id="background-music" src="https://www.example.com/romantic-background.mp3" autoplay loop></audio>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('day').textContent = days[now.getDay()];
+            document.getElementById('time').textContent = now.toLocaleTimeString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
